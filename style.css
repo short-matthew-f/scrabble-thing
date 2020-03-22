@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.area {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  width: 876px;
+}
+
+.area:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.area header {
+  grid-row: 1;
+  grid-column: 1;
+  background: #222;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+}
+
+.area main {
+  grid-row: 2;
+  grid-column: 1 / -1;
+
+  border: 2px solid #222;
+  border-radius: 0 8px 8px 8px;
+  overflow: hidden;
+}
+
+.area .point-values,
+.area .tile-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 64px);
+  grid-gap: 8px;
+}
+
+.area .tile-grid {
+  padding: 8px;
+}
+
+#play-area .tile-grid {
+  padding-bottom: 24px;
+}
+
+.area .point-values {
+  grid-row: 2;
+  grid-gap: 8px;
+  background: #eee;
+  padding: 8px;
+  border-bottom: 1px solid #222;
+}
+
+.area .point-values * {
+  padding: 8px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border: 1px solid #222;
+  text-shadow: 1px 1px 2px #333, -1px -1px 2px #333;
+}
+
+.normal-word-score {
+  grid-column: span 6;
+  background: gold;
+}
+
+.double-word-score {
+  grid-column: span 2;
+  background: green;
+}
+
+.triple-word-score {
+  grid-column: span 4;
+  background: red;
+}
+
+.tile,
+.tile-target {
+  height: 64px;
+  width: 64px;
+  position: relative;
+}
+
+.tile-target.two-times-letter::before,
+.tile-target.three-times-letter::before {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  padding: 0 8px;
+  color: white;
+}
+
+.tile-target .tile {
+  left: -1px;
+  top: -1px;
+}
+
+.two-times-letter::before {
+  content: "2X";
+  background: green;
+}
+
+.three-times-letter::before {
+  content: "3X";
+  background: red;
+}
+
+.tile-target.two-times-letter {
+  border: 1px solid green;
+  background: #bfb;
+}
+
+.tile-target.three-times-letter {
+  border: 1px solid red;
+  background: #fbb;
+}
+
+.tile {
+  font-family: sans-serif;
+  text-align: center;
+  background: burlywood;
+  border: 1px solid black;
+  box-shadow: 2px 2px 8px -4px black;
+}
+
+.tile-target {
+  border: 1px dashed black;
+}
+
+.tile .character {
+  text-transform: uppercase;
+  font-size: 48px;
+  line-height: 52px;
+  color: white;
+  text-shadow: 2px 2px 1px black, 0 0 2px black;
+  position: relative;
+  right: 8px;
+}
+
+.tile .points {
+  position: absolute;
+  bottom: 0;
+  right: 2px;
+  font-size: 20px;
+}
+
+
+.normal-score {
+  grid-column: ;
+}
